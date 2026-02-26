@@ -1,0 +1,12 @@
+assume {
+    // A0
+} structure {
+    // S0
+    release1 causes start1;
+    start1 causes finish1;
+    release2 causes start2;
+    start2 causes finish2;
+    release3 causes start3;
+    start3 causes finish3;
+    finish1 causes release2;
+}

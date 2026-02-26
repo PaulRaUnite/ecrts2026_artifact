@@ -1,0 +1,768 @@
+assume {
+
+
+    duration : 0ms <= GPS_PHASE <= 102ms;
+    continuous process GPS_PHASE with uniform;
+
+    duration : -2ms <= GPS_JITTER <= 2ms;
+    continuous process GPS_JITTER with normal(0s, 1ms);
+
+    duration : 0ms <= GPS_EXECUTION <= 4ms;
+    continuous process GPS_EXECUTION with normal(2ms, 1ms);
+
+
+
+    duration : 0ms <= Inertial_PHASE <= 17ms;
+    continuous process Inertial_PHASE with uniform;
+
+    duration : -2ms <= Inertial_JITTER <= 2ms;
+    continuous process Inertial_JITTER with normal(0s, 1ms);
+
+    duration : 0ms <= Inertial_EXECUTION <= 4ms;
+    continuous process Inertial_EXECUTION with normal(2ms, 1ms);
+
+
+
+    duration : 0ms <= SteeringWheelPosition_PHASE <= 22ms;
+    continuous process SteeringWheelPosition_PHASE with uniform;
+
+    duration : -2ms <= SteeringWheelPosition_JITTER <= 2ms;
+    continuous process SteeringWheelPosition_JITTER with normal(0s, 1ms);
+
+    duration : 0ms <= SteeringWheelPosition_EXECUTION <= 4ms;
+    continuous process SteeringWheelPosition_EXECUTION with normal(2ms, 1ms);
+
+
+
+    duration : 0ms <= BrakePedalPosition_PHASE <= 22ms;
+    continuous process BrakePedalPosition_PHASE with uniform;
+
+    duration : -2ms <= BrakePedalPosition_JITTER <= 2ms;
+    continuous process BrakePedalPosition_JITTER with normal(0s, 1ms);
+
+    duration : 0ms <= BrakePedalPosition_EXECUTION <= 4ms;
+    continuous process BrakePedalPosition_EXECUTION with normal(2ms, 1ms);
+
+
+
+    duration : 0ms <= AccelerationPedalPosition_PHASE <= 22ms;
+    continuous process AccelerationPedalPosition_PHASE with uniform;
+
+    duration : -2ms <= AccelerationPedalPosition_JITTER <= 2ms;
+    continuous process AccelerationPedalPosition_JITTER with normal(0s, 1ms);
+
+    duration : 0ms <= AccelerationPedalPosition_EXECUTION <= 4ms;
+    continuous process AccelerationPedalPosition_EXECUTION with normal(2ms, 1ms);
+
+
+
+    duration : 0ms <= Camera1_PHASE <= 35ms;
+    continuous process Camera1_PHASE with uniform;
+
+    duration : -2ms <= Camera1_JITTER <= 2ms;
+    continuous process Camera1_JITTER with normal(0s, 1ms);
+
+    duration : 1ms <= Camera1_EXECUTION <= 9ms;
+    continuous process Camera1_EXECUTION with normal(5ms, 2ms);
+
+
+
+    duration : 0ms <= Camera2_PHASE <= 35ms;
+    continuous process Camera2_PHASE with uniform;
+
+    duration : -2ms <= Camera2_JITTER <= 2ms;
+    continuous process Camera2_JITTER with normal(0s, 1ms);
+
+    duration : 1ms <= Camera2_EXECUTION <= 9ms;
+    continuous process Camera2_EXECUTION with normal(5ms, 2ms);
+
+
+
+    duration : 0ms <= Camera3_PHASE <= 35ms;
+    continuous process Camera3_PHASE with uniform;
+
+    duration : -2ms <= Camera3_JITTER <= 2ms;
+    continuous process Camera3_JITTER with normal(0s, 1ms);
+
+    duration : 1ms <= Camera3_EXECUTION <= 9ms;
+    continuous process Camera3_EXECUTION with normal(5ms, 2ms);
+
+
+
+    duration : 0ms <= Camera4_PHASE <= 35ms;
+    continuous process Camera4_PHASE with uniform;
+
+    duration : -2ms <= Camera4_JITTER <= 2ms;
+    continuous process Camera4_JITTER with normal(0s, 1ms);
+
+    duration : 1ms <= Camera4_EXECUTION <= 9ms;
+    continuous process Camera4_EXECUTION with normal(5ms, 2ms);
+
+
+
+    duration : 0ms <= Camera5_PHASE <= 35ms;
+    continuous process Camera5_PHASE with uniform;
+
+    duration : -2ms <= Camera5_JITTER <= 2ms;
+    continuous process Camera5_JITTER with normal(0s, 1ms);
+
+    duration : 1ms <= Camera5_EXECUTION <= 9ms;
+    continuous process Camera5_EXECUTION with normal(5ms, 2ms);
+
+
+
+    duration : 0ms <= Camera6_PHASE <= 35ms;
+    continuous process Camera6_PHASE with uniform;
+
+    duration : -2ms <= Camera6_JITTER <= 2ms;
+    continuous process Camera6_JITTER with normal(0s, 1ms);
+
+    duration : 1ms <= Camera6_EXECUTION <= 9ms;
+    continuous process Camera6_EXECUTION with normal(5ms, 2ms);
+
+
+
+    duration : 0ms <= Camera7_PHASE <= 35ms;
+    continuous process Camera7_PHASE with uniform;
+
+    duration : -2ms <= Camera7_JITTER <= 2ms;
+    continuous process Camera7_JITTER with normal(0s, 1ms);
+
+    duration : 1ms <= Camera7_EXECUTION <= 9ms;
+    continuous process Camera7_EXECUTION with normal(5ms, 2ms);
+
+
+
+    duration : 0ms <= LiDAR_PHASE <= 102ms;
+    continuous process LiDAR_PHASE with uniform;
+
+    duration : -2ms <= LiDAR_JITTER <= 2ms;
+    continuous process LiDAR_JITTER with normal(0s, 1ms);
+
+    duration : 0ms <= LiDAR_EXECUTION <= 20ms;
+    continuous process LiDAR_EXECUTION with normal(10ms, 5ms);
+
+
+
+    duration : 0ms <= Radar_PHASE <= 102ms;
+    continuous process Radar_PHASE with uniform;
+
+    duration : -2ms <= Radar_JITTER <= 2ms;
+    continuous process Radar_JITTER with normal(0s, 1ms);
+
+    duration : 3ms <= Radar_EXECUTION <= 7ms;
+    continuous process Radar_EXECUTION with normal(5ms, 1ms);
+
+
+
+    duration : 0ms <= Wheel1Speed_PHASE <= 27ms;
+    continuous process Wheel1Speed_PHASE with uniform;
+
+    duration : -2ms <= Wheel1Speed_JITTER <= 2ms;
+    continuous process Wheel1Speed_JITTER with normal(0s, 1ms);
+
+    duration : 3ms <= Wheel1Speed_EXECUTION <= 7ms;
+    continuous process Wheel1Speed_EXECUTION with normal(5ms, 1ms);
+
+
+
+    duration : 0ms <= Wheel2Speed_PHASE <= 27ms;
+    continuous process Wheel2Speed_PHASE with uniform;
+
+    duration : -2ms <= Wheel2Speed_JITTER <= 2ms;
+    continuous process Wheel2Speed_JITTER with normal(0s, 1ms);
+
+    duration : 3ms <= Wheel2Speed_EXECUTION <= 7ms;
+    continuous process Wheel2Speed_EXECUTION with normal(5ms, 1ms);
+
+
+
+    duration : 0ms <= Wheel3Speed_PHASE <= 27ms;
+    continuous process Wheel3Speed_PHASE with uniform;
+
+    duration : -2ms <= Wheel3Speed_JITTER <= 2ms;
+    continuous process Wheel3Speed_JITTER with normal(0s, 1ms);
+
+    duration : 3ms <= Wheel3Speed_EXECUTION <= 7ms;
+    continuous process Wheel3Speed_EXECUTION with normal(5ms, 1ms);
+
+
+
+    duration : 0ms <= Wheel4Speed_PHASE <= 27ms;
+    continuous process Wheel4Speed_PHASE with uniform;
+
+    duration : -2ms <= Wheel4Speed_JITTER <= 2ms;
+    continuous process Wheel4Speed_JITTER with normal(0s, 1ms);
+
+    duration : 3ms <= Wheel4Speed_EXECUTION <= 7ms;
+    continuous process Wheel4Speed_EXECUTION with normal(5ms, 1ms);
+
+
+
+
+    duration : 6ms <= Braking_EXECUTION <= 14ms;
+    continuous process Braking_EXECUTION with normal(10ms, 2ms);
+
+
+
+
+    duration : 0ms <= CollisionAlert_EXECUTION <= 4ms;
+    continuous process CollisionAlert_EXECUTION with normal(2ms, 1ms);
+
+
+
+
+    duration : 0ms <= PassingVehicleIndicator_EXECUTION <= 4ms;
+    continuous process PassingVehicleIndicator_EXECUTION with normal(2ms, 1ms);
+
+
+
+    duration : 0ms <= NavigationHint_PHASE <= 42ms;
+    continuous process NavigationHint_PHASE with uniform;
+
+    duration : -2ms <= NavigationHint_JITTER <= 2ms;
+    continuous process NavigationHint_JITTER with normal(0s, 1ms);
+
+    duration : 0ms <= NavigationHint_EXECUTION <= 4ms;
+    continuous process NavigationHint_EXECUTION with normal(2ms, 1ms);
+
+
+
+    duration : 0ms <= SpeedingAlert_PHASE <= 42ms;
+    continuous process SpeedingAlert_PHASE with uniform;
+
+    duration : -2ms <= SpeedingAlert_JITTER <= 2ms;
+    continuous process SpeedingAlert_JITTER with normal(0s, 1ms);
+
+    duration : 0ms <= SpeedingAlert_EXECUTION <= 4ms;
+    continuous process SpeedingAlert_EXECUTION with normal(2ms, 1ms);
+
+
+
+
+    duration : 0ms <= LaneDepartureAlert_EXECUTION <= 4ms;
+    continuous process LaneDepartureAlert_EXECUTION with normal(2ms, 1ms);
+
+
+
+    duration : 0ms <= AwarenessAlert_PHASE <= 42ms;
+    continuous process AwarenessAlert_PHASE with uniform;
+
+    duration : -2ms <= AwarenessAlert_JITTER <= 2ms;
+    continuous process AwarenessAlert_JITTER with normal(0s, 1ms);
+
+    duration : 0ms <= AwarenessAlert_EXECUTION <= 4ms;
+    continuous process AwarenessAlert_EXECUTION with normal(2ms, 1ms);
+
+
+
+
+    duration : 1ms <= Fusion_Positioning_EXECUTION <= 1ms;
+    continuous process Fusion_Positioning_EXECUTION with normal(1ms, 0ms);
+
+
+
+    duration : 0ms <= Fusion_Speed_PHASE <= 27ms;
+    continuous process Fusion_Speed_PHASE with uniform;
+
+    duration : -2ms <= Fusion_Speed_JITTER <= 2ms;
+    continuous process Fusion_Speed_JITTER with normal(0s, 1ms);
+
+    duration : 1ms <= Fusion_Speed_EXECUTION <= 1ms;
+    continuous process Fusion_Speed_EXECUTION with normal(1ms, 0ms);
+
+
+
+    duration : 0ms <= Perception_CameraPerception_PHASE <= 120ms;
+    continuous process Perception_CameraPerception_PHASE with uniform;
+
+    duration : -20ms <= Perception_CameraPerception_JITTER <= 20ms;
+    continuous process Perception_CameraPerception_JITTER with normal(0s, 10ms);
+
+    duration : 4ms <= Perception_CameraPerception_EXECUTION <= 16ms;
+    continuous process Perception_CameraPerception_EXECUTION with normal(10ms, 3ms);
+
+
+
+
+    duration : 10ms <= Perception_LiDARPerception_EXECUTION <= 50ms;
+    continuous process Perception_LiDARPerception_EXECUTION with normal(30ms, 10ms);
+
+
+
+
+    duration : 2ms <= Perception_RadarPerception_EXECUTION <= 18ms;
+    continuous process Perception_RadarPerception_EXECUTION with normal(10ms, 4ms);
+
+
+
+    duration : 0ms <= Perception_Fusion_PHASE <= 110ms;
+    continuous process Perception_Fusion_PHASE with uniform;
+
+    duration : -10ms <= Perception_Fusion_JITTER <= 10ms;
+    continuous process Perception_Fusion_JITTER with normal(0s, 5ms);
+
+    duration : 15ms <= Perception_Fusion_EXECUTION <= 35ms;
+    continuous process Perception_Fusion_EXECUTION with normal(25ms, 5ms);
+
+
+
+
+    duration : 30ms <= SemanticExtraction_ObjectDetection_EXECUTION <= 70ms;
+    continuous process SemanticExtraction_ObjectDetection_EXECUTION with normal(50ms, 10ms);
+
+
+
+
+    duration : 8ms <= SemanticExtraction_Prediction_EXECUTION <= 12ms;
+    continuous process SemanticExtraction_Prediction_EXECUTION with normal(10ms, 1ms);
+
+
+
+    duration : 0ms <= SemanticExtraction_SignInterpretation_PHASE <= 240ms;
+    continuous process SemanticExtraction_SignInterpretation_PHASE with uniform;
+
+    duration : -40ms <= SemanticExtraction_SignInterpretation_JITTER <= 40ms;
+    continuous process SemanticExtraction_SignInterpretation_JITTER with normal(0s, 20ms);
+
+    duration : 0ms <= SemanticExtraction_SignInterpretation_EXECUTION <= 20ms;
+    continuous process SemanticExtraction_SignInterpretation_EXECUTION with normal(10ms, 5ms);
+
+
+
+    duration : 0ms <= CollisionDetection_TimeToCollision_PHASE <= 220ms;
+    continuous process CollisionDetection_TimeToCollision_PHASE with uniform;
+
+    duration : -20ms <= CollisionDetection_TimeToCollision_JITTER <= 20ms;
+    continuous process CollisionDetection_TimeToCollision_JITTER with normal(0s, 10ms);
+
+    duration : 20ms <= CollisionDetection_TimeToCollision_EXECUTION <= 40ms;
+    continuous process CollisionDetection_TimeToCollision_EXECUTION with normal(30ms, 5ms);
+
+
+
+
+    duration : 1ms <= CollisionDetection_BrakingDecision_EXECUTION <= 9ms;
+    continuous process CollisionDetection_BrakingDecision_EXECUTION with normal(5ms, 2ms);
+
+
+
+
+    duration : 0ms <= Assistance_BlindSpot_EXECUTION <= 20ms;
+    continuous process Assistance_BlindSpot_EXECUTION with normal(10ms, 5ms);
+
+
+
+    duration : 0ms <= Assistance_Navigation_PHASE <= 140ms;
+    continuous process Assistance_Navigation_PHASE with uniform;
+
+    duration : -40ms <= Assistance_Navigation_JITTER <= 40ms;
+    continuous process Assistance_Navigation_JITTER with normal(0s, 20ms);
+
+    duration : 30ms <= Assistance_Navigation_EXECUTION <= 70ms;
+    continuous process Assistance_Navigation_EXECUTION with normal(50ms, 10ms);
+
+
+
+    duration : 0ms <= Assistance_Speeding_PHASE <= 700ms;
+    continuous process Assistance_Speeding_PHASE with uniform;
+
+    duration : -200ms <= Assistance_Speeding_JITTER <= 200ms;
+    continuous process Assistance_Speeding_JITTER with normal(0s, 100ms);
+
+    duration : 2ms <= Assistance_Speeding_EXECUTION <= 2ms;
+    continuous process Assistance_Speeding_EXECUTION with normal(2ms, 0ms);
+
+
+
+
+    duration : 3ms <= Assistance_LaneMonitoring_EXECUTION <= 7ms;
+    continuous process Assistance_LaneMonitoring_EXECUTION with normal(5ms, 1ms);
+
+
+
+    duration : 0ms <= Assistance_PedestrianNotification_PHASE <= 1200ms;
+    continuous process Assistance_PedestrianNotification_PHASE with uniform;
+
+    duration : -200ms <= Assistance_PedestrianNotification_JITTER <= 200ms;
+    continuous process Assistance_PedestrianNotification_JITTER with normal(0s, 100ms);
+
+    duration : 4ms <= Assistance_PedestrianNotification_EXECUTION <= 16ms;
+    continuous process Assistance_PedestrianNotification_EXECUTION with normal(10ms, 3ms);
+
+
+} structure {
+
+    var gpu0_SPAWN, gpu0_EXECUTION, gpu0_RELEASE, gpu0_FREE, gpu0_FORCE, gpu0_TAKEN, gpu0_DROP : clock;
+    gpu0_SPAWN = gpu0_FREE xor gpu0_TAKEN;
+    gpu0_RELEASE = gpu0_FORCE xor gpu0_DROP;
+    gpu0_EXECUTION = (gpu0_FREE or gpu0_FORCE);
+    allow gpu0_TAKEN in ]gpu0_EXECUTION, gpu0_RELEASE];
+    forbid gpu0_FREE in ]gpu0_EXECUTION, gpu0_RELEASE];
+    gpu0_EXECUTION alternates gpu0_RELEASE;
+
+
+    var gpu1_SPAWN, gpu1_EXECUTION, gpu1_RELEASE, gpu1_FREE, gpu1_FORCE, gpu1_TAKEN, gpu1_DROP : clock;
+    gpu1_SPAWN = gpu1_FREE xor gpu1_TAKEN;
+    gpu1_RELEASE = gpu1_FORCE xor gpu1_DROP;
+    gpu1_EXECUTION = (gpu1_FREE or gpu1_FORCE);
+    allow gpu1_TAKEN in ]gpu1_EXECUTION, gpu1_RELEASE];
+    forbid gpu1_FREE in ]gpu1_EXECUTION, gpu1_RELEASE];
+    gpu1_EXECUTION alternates gpu1_RELEASE;
+
+
+    var cpu0_SPAWN, cpu0_EXECUTION, cpu0_RELEASE, cpu0_FREE, cpu0_FORCE, cpu0_TAKEN, cpu0_DROP : clock;
+    cpu0_SPAWN = cpu0_FREE xor cpu0_TAKEN;
+    cpu0_RELEASE = cpu0_FORCE xor cpu0_DROP;
+    cpu0_EXECUTION = (cpu0_FREE or cpu0_FORCE);
+    allow cpu0_TAKEN in ]cpu0_EXECUTION, cpu0_RELEASE];
+    forbid cpu0_FREE in ]cpu0_EXECUTION, cpu0_RELEASE];
+    cpu0_EXECUTION alternates cpu0_RELEASE;
+
+
+    var cpu1_SPAWN, cpu1_EXECUTION, cpu1_RELEASE, cpu1_FREE, cpu1_FORCE, cpu1_TAKEN, cpu1_DROP : clock;
+    cpu1_SPAWN = cpu1_FREE xor cpu1_TAKEN;
+    cpu1_RELEASE = cpu1_FORCE xor cpu1_DROP;
+    cpu1_EXECUTION = (cpu1_FREE or cpu1_FORCE);
+    allow cpu1_TAKEN in ]cpu1_EXECUTION, cpu1_RELEASE];
+    forbid cpu1_FREE in ]cpu1_EXECUTION, cpu1_RELEASE];
+    cpu1_EXECUTION alternates cpu1_RELEASE;
+
+
+    var cpu2_SPAWN, cpu2_EXECUTION, cpu2_RELEASE, cpu2_FREE, cpu2_FORCE, cpu2_TAKEN, cpu2_DROP : clock;
+    cpu2_SPAWN = cpu2_FREE xor cpu2_TAKEN;
+    cpu2_RELEASE = cpu2_FORCE xor cpu2_DROP;
+    cpu2_EXECUTION = (cpu2_FREE or cpu2_FORCE);
+    allow cpu2_TAKEN in ]cpu2_EXECUTION, cpu2_RELEASE];
+    forbid cpu2_FREE in ]cpu2_EXECUTION, cpu2_RELEASE];
+    cpu2_EXECUTION alternates cpu2_RELEASE;
+
+
+    var cpu3_SPAWN, cpu3_EXECUTION, cpu3_RELEASE, cpu3_FREE, cpu3_FORCE, cpu3_TAKEN, cpu3_DROP : clock;
+    cpu3_SPAWN = cpu3_FREE xor cpu3_TAKEN;
+    cpu3_RELEASE = cpu3_FORCE xor cpu3_DROP;
+    cpu3_EXECUTION = (cpu3_FREE or cpu3_FORCE);
+    allow cpu3_TAKEN in ]cpu3_EXECUTION, cpu3_RELEASE];
+    forbid cpu3_FREE in ]cpu3_EXECUTION, cpu3_RELEASE];
+    cpu3_EXECUTION alternates cpu3_RELEASE;
+
+
+    GPS_SPAWN = periodic 100ms with jitter GPS_JITTER offset GPS_PHASE;
+    GPS_SPAWN causes GPS_START;GPS_SPAWN = GPS_START;
+    GPS_FINISH = delay GPS_START by GPS_EXECUTION;
+
+
+    Inertial_SPAWN = periodic 15ms with jitter Inertial_JITTER offset Inertial_PHASE;
+    Inertial_SPAWN causes Inertial_START;Inertial_SPAWN = Inertial_START;
+    Inertial_FINISH = delay Inertial_START by Inertial_EXECUTION;
+
+
+    SteeringWheelPosition_SPAWN = periodic 20ms with jitter SteeringWheelPosition_JITTER offset SteeringWheelPosition_PHASE;
+    SteeringWheelPosition_SPAWN causes SteeringWheelPosition_START;SteeringWheelPosition_SPAWN = SteeringWheelPosition_START;
+    SteeringWheelPosition_FINISH = delay SteeringWheelPosition_START by SteeringWheelPosition_EXECUTION;
+
+
+    BrakePedalPosition_SPAWN = periodic 20ms with jitter BrakePedalPosition_JITTER offset BrakePedalPosition_PHASE;
+    BrakePedalPosition_SPAWN causes BrakePedalPosition_START;BrakePedalPosition_SPAWN = BrakePedalPosition_START;
+    BrakePedalPosition_FINISH = delay BrakePedalPosition_START by BrakePedalPosition_EXECUTION;
+
+
+    AccelerationPedalPosition_SPAWN = periodic 20ms with jitter AccelerationPedalPosition_JITTER offset AccelerationPedalPosition_PHASE;
+    AccelerationPedalPosition_SPAWN causes AccelerationPedalPosition_START;AccelerationPedalPosition_SPAWN = AccelerationPedalPosition_START;
+    AccelerationPedalPosition_FINISH = delay AccelerationPedalPosition_START by AccelerationPedalPosition_EXECUTION;
+
+
+    Camera1_SPAWN = periodic 33ms with jitter Camera1_JITTER offset Camera1_PHASE;
+    Camera1_SPAWN causes Camera1_START;Camera1_SPAWN = Camera1_START;
+    Camera1_FINISH = delay Camera1_START by Camera1_EXECUTION;
+
+
+    Camera2_SPAWN = periodic 33ms with jitter Camera2_JITTER offset Camera2_PHASE;
+    Camera2_SPAWN causes Camera2_START;Camera2_SPAWN = Camera2_START;
+    Camera2_FINISH = delay Camera2_START by Camera2_EXECUTION;
+
+
+    Camera3_SPAWN = periodic 33ms with jitter Camera3_JITTER offset Camera3_PHASE;
+    Camera3_SPAWN causes Camera3_START;Camera3_SPAWN = Camera3_START;
+    Camera3_FINISH = delay Camera3_START by Camera3_EXECUTION;
+
+
+    Camera4_SPAWN = periodic 33ms with jitter Camera4_JITTER offset Camera4_PHASE;
+    Camera4_SPAWN causes Camera4_START;Camera4_SPAWN = Camera4_START;
+    Camera4_FINISH = delay Camera4_START by Camera4_EXECUTION;
+
+
+    Camera5_SPAWN = periodic 33ms with jitter Camera5_JITTER offset Camera5_PHASE;
+    Camera5_SPAWN causes Camera5_START;Camera5_SPAWN = Camera5_START;
+    Camera5_FINISH = delay Camera5_START by Camera5_EXECUTION;
+
+
+    Camera6_SPAWN = periodic 33ms with jitter Camera6_JITTER offset Camera6_PHASE;
+    Camera6_SPAWN causes Camera6_START;Camera6_SPAWN = Camera6_START;
+    Camera6_FINISH = delay Camera6_START by Camera6_EXECUTION;
+
+
+    Camera7_SPAWN = periodic 33ms with jitter Camera7_JITTER offset Camera7_PHASE;
+    Camera7_SPAWN causes Camera7_START;Camera7_SPAWN = Camera7_START;
+    Camera7_FINISH = delay Camera7_START by Camera7_EXECUTION;
+
+
+    LiDAR_SPAWN = periodic 100ms with jitter LiDAR_JITTER offset LiDAR_PHASE;
+    LiDAR_SPAWN causes LiDAR_START;LiDAR_SPAWN = LiDAR_START;
+    LiDAR_FINISH = delay LiDAR_START by LiDAR_EXECUTION;
+
+
+    Radar_SPAWN = periodic 100ms with jitter Radar_JITTER offset Radar_PHASE;
+    Radar_SPAWN causes Radar_START;Radar_SPAWN = Radar_START;
+    Radar_FINISH = delay Radar_START by Radar_EXECUTION;
+
+
+    Wheel1Speed_SPAWN = periodic 25ms with jitter Wheel1Speed_JITTER offset Wheel1Speed_PHASE;
+    Wheel1Speed_SPAWN causes Wheel1Speed_START;Wheel1Speed_SPAWN = Wheel1Speed_START;
+    Wheel1Speed_FINISH = delay Wheel1Speed_START by Wheel1Speed_EXECUTION;
+
+
+    Wheel2Speed_SPAWN = periodic 25ms with jitter Wheel2Speed_JITTER offset Wheel2Speed_PHASE;
+    Wheel2Speed_SPAWN causes Wheel2Speed_START;Wheel2Speed_SPAWN = Wheel2Speed_START;
+    Wheel2Speed_FINISH = delay Wheel2Speed_START by Wheel2Speed_EXECUTION;
+
+
+    Wheel3Speed_SPAWN = periodic 25ms with jitter Wheel3Speed_JITTER offset Wheel3Speed_PHASE;
+    Wheel3Speed_SPAWN causes Wheel3Speed_START;Wheel3Speed_SPAWN = Wheel3Speed_START;
+    Wheel3Speed_FINISH = delay Wheel3Speed_START by Wheel3Speed_EXECUTION;
+
+
+    Wheel4Speed_SPAWN = periodic 25ms with jitter Wheel4Speed_JITTER offset Wheel4Speed_PHASE;
+    Wheel4Speed_SPAWN causes Wheel4Speed_START;Wheel4Speed_SPAWN = Wheel4Speed_START;
+    Wheel4Speed_FINISH = delay Wheel4Speed_START by Wheel4Speed_EXECUTION;
+
+
+
+    Braking_SPAWN |= CollisionDetection_BrakingDecision_FINISH;    Braking_SPAWN causes Braking_START;Braking_SPAWN = Braking_START;
+    Braking_FINISH = delay Braking_START by Braking_EXECUTION;
+
+
+
+    CollisionAlert_SPAWN |= CollisionDetection_BrakingDecision_FINISH;    CollisionAlert_SPAWN causes CollisionAlert_START;CollisionAlert_SPAWN = CollisionAlert_START;
+    CollisionAlert_FINISH = delay CollisionAlert_START by CollisionAlert_EXECUTION;
+
+
+
+    PassingVehicleIndicator_SPAWN |= Assistance_BlindSpot_FINISH;    PassingVehicleIndicator_SPAWN causes PassingVehicleIndicator_START;PassingVehicleIndicator_SPAWN = PassingVehicleIndicator_START;
+    PassingVehicleIndicator_FINISH = delay PassingVehicleIndicator_START by PassingVehicleIndicator_EXECUTION;
+
+
+    NavigationHint_SPAWN = periodic 40ms with jitter NavigationHint_JITTER offset NavigationHint_PHASE;
+    NavigationHint_SPAWN causes NavigationHint_START;NavigationHint_SPAWN = NavigationHint_START;
+    NavigationHint_FINISH = delay NavigationHint_START by NavigationHint_EXECUTION;
+
+
+    SpeedingAlert_SPAWN = periodic 40ms with jitter SpeedingAlert_JITTER offset SpeedingAlert_PHASE;
+    SpeedingAlert_SPAWN causes SpeedingAlert_START;SpeedingAlert_SPAWN = SpeedingAlert_START;
+    SpeedingAlert_FINISH = delay SpeedingAlert_START by SpeedingAlert_EXECUTION;
+
+
+
+    LaneDepartureAlert_SPAWN |= Assistance_LaneMonitoring_FINISH;    LaneDepartureAlert_SPAWN causes LaneDepartureAlert_START;LaneDepartureAlert_SPAWN = LaneDepartureAlert_START;
+    LaneDepartureAlert_FINISH = delay LaneDepartureAlert_START by LaneDepartureAlert_EXECUTION;
+
+
+    AwarenessAlert_SPAWN = periodic 40ms with jitter AwarenessAlert_JITTER offset AwarenessAlert_PHASE;
+    AwarenessAlert_SPAWN causes AwarenessAlert_START;AwarenessAlert_SPAWN = AwarenessAlert_START;
+    AwarenessAlert_FINISH = delay AwarenessAlert_START by AwarenessAlert_EXECUTION;
+
+
+
+    Fusion_Positioning_SPAWN |= Inertial_FINISH;    Fusion_Positioning_SPAWN causes Fusion_Positioning_START;
+    allow Fusion_Positioning_FINISH_FORCE in [Fusion_Positioning_SPAWN, Fusion_Positioning_FINISH[;
+    forbid cpu0_DROP in [Fusion_Positioning_SPAWN, Fusion_Positioning_FINISH[;
+    cpu0_FORCE += Fusion_Positioning_FINISH_FORCE;
+    cpu0_SPAWN += Fusion_Positioning_SPAWN;
+    cpu0_EXECUTION |= Fusion_Positioning_START;
+    cpu0_RELEASE |= Fusion_Positioning_FINISH;
+
+    Fusion_Positioning_FINISH = delay Fusion_Positioning_START by Fusion_Positioning_EXECUTION;
+
+
+    Fusion_Speed_SPAWN = periodic 25ms with jitter Fusion_Speed_JITTER offset Fusion_Speed_PHASE;
+    Fusion_Speed_SPAWN causes Fusion_Speed_START;
+    allow Fusion_Speed_FINISH_FORCE in [Fusion_Speed_SPAWN, Fusion_Speed_FINISH[;
+    forbid cpu0_DROP in [Fusion_Speed_SPAWN, Fusion_Speed_FINISH[;
+    cpu0_FORCE += Fusion_Speed_FINISH_FORCE;
+    cpu0_SPAWN += Fusion_Speed_SPAWN;
+    cpu0_EXECUTION |= Fusion_Speed_START;
+    cpu0_RELEASE |= Fusion_Speed_FINISH;
+
+    Fusion_Speed_FINISH = delay Fusion_Speed_START by Fusion_Speed_EXECUTION;
+
+
+    Perception_CameraPerception_SPAWN = periodic 100ms with jitter Perception_CameraPerception_JITTER offset Perception_CameraPerception_PHASE;
+    Perception_CameraPerception_SPAWN causes Perception_CameraPerception_START;
+    allow Perception_CameraPerception_FINISH_FORCE in [Perception_CameraPerception_SPAWN, Perception_CameraPerception_FINISH[;
+    forbid gpu0_DROP in [Perception_CameraPerception_SPAWN, Perception_CameraPerception_FINISH[;
+    gpu0_FORCE += Perception_CameraPerception_FINISH_FORCE;
+    gpu0_SPAWN += Perception_CameraPerception_SPAWN;
+    gpu0_EXECUTION |= Perception_CameraPerception_START;
+    gpu0_RELEASE |= Perception_CameraPerception_FINISH;
+
+    Perception_CameraPerception_FINISH = delay Perception_CameraPerception_START by Perception_CameraPerception_EXECUTION;
+
+
+
+    Perception_LiDARPerception_SPAWN |= LiDAR_FINISH;
+      Perception_LiDARPerception_SPAWN causes Perception_LiDARPerception_START;
+    allow Perception_LiDARPerception_FINISH_FORCE in [Perception_LiDARPerception_SPAWN, Perception_LiDARPerception_FINISH[;
+    forbid gpu0_DROP in [Perception_LiDARPerception_SPAWN, Perception_LiDARPerception_FINISH[;
+    gpu0_FORCE += Perception_LiDARPerception_FINISH_FORCE;
+    gpu0_SPAWN += Perception_LiDARPerception_SPAWN;
+    gpu0_EXECUTION |= Perception_LiDARPerception_START;
+    gpu0_RELEASE |= Perception_LiDARPerception_FINISH;
+
+    Perception_LiDARPerception_FINISH = delay Perception_LiDARPerception_START by Perception_LiDARPerception_EXECUTION;
+
+
+
+    Perception_RadarPerception_SPAWN |= Radar_FINISH;    Perception_RadarPerception_SPAWN causes Perception_RadarPerception_START;
+    allow Perception_RadarPerception_FINISH_FORCE in [Perception_RadarPerception_SPAWN, Perception_RadarPerception_FINISH[;
+    forbid gpu0_DROP in [Perception_RadarPerception_SPAWN, Perception_RadarPerception_FINISH[;
+    gpu0_FORCE += Perception_RadarPerception_FINISH_FORCE;
+    gpu0_SPAWN += Perception_RadarPerception_SPAWN;
+    gpu0_EXECUTION |= Perception_RadarPerception_START;
+    gpu0_RELEASE |= Perception_RadarPerception_FINISH;
+
+    Perception_RadarPerception_FINISH = delay Perception_RadarPerception_START by Perception_RadarPerception_EXECUTION;
+
+
+    Perception_Fusion_SPAWN = periodic 100ms with jitter Perception_Fusion_JITTER offset Perception_Fusion_PHASE;
+    Perception_Fusion_SPAWN causes Perception_Fusion_START;
+    allow Perception_Fusion_FINISH_FORCE in [Perception_Fusion_SPAWN, Perception_Fusion_FINISH[;
+    forbid gpu1_DROP in [Perception_Fusion_SPAWN, Perception_Fusion_FINISH[;
+    gpu1_FORCE += Perception_Fusion_FINISH_FORCE;
+    gpu1_SPAWN += Perception_Fusion_SPAWN;
+    gpu1_EXECUTION |= Perception_Fusion_START;
+    gpu1_RELEASE |= Perception_Fusion_FINISH;
+
+    Perception_Fusion_FINISH = delay Perception_Fusion_START by Perception_Fusion_EXECUTION;
+
+
+
+    SemanticExtraction_ObjectDetection_SPAWN |= Perception_Fusion_FINISH;    SemanticExtraction_ObjectDetection_SPAWN causes SemanticExtraction_ObjectDetection_START;
+    allow SemanticExtraction_ObjectDetection_FINISH_FORCE in [SemanticExtraction_ObjectDetection_SPAWN, SemanticExtraction_ObjectDetection_FINISH[;
+    forbid gpu1_DROP in [SemanticExtraction_ObjectDetection_SPAWN, SemanticExtraction_ObjectDetection_FINISH[;
+    gpu1_FORCE += SemanticExtraction_ObjectDetection_FINISH_FORCE;
+    gpu1_SPAWN += SemanticExtraction_ObjectDetection_SPAWN;
+    gpu1_EXECUTION |= SemanticExtraction_ObjectDetection_START;
+    gpu1_RELEASE |= SemanticExtraction_ObjectDetection_FINISH;
+
+    SemanticExtraction_ObjectDetection_FINISH = delay SemanticExtraction_ObjectDetection_START by SemanticExtraction_ObjectDetection_EXECUTION;
+
+
+
+    SemanticExtraction_Prediction_SPAWN |= SemanticExtraction_ObjectDetection_FINISH;    SemanticExtraction_Prediction_SPAWN causes SemanticExtraction_Prediction_START;
+    allow SemanticExtraction_Prediction_FINISH_FORCE in [SemanticExtraction_Prediction_SPAWN, SemanticExtraction_Prediction_FINISH[;
+    forbid cpu1_DROP in [SemanticExtraction_Prediction_SPAWN, SemanticExtraction_Prediction_FINISH[;
+    cpu1_FORCE += SemanticExtraction_Prediction_FINISH_FORCE;
+    cpu1_SPAWN += SemanticExtraction_Prediction_SPAWN;
+    cpu1_EXECUTION |= SemanticExtraction_Prediction_START;
+    cpu1_RELEASE |= SemanticExtraction_Prediction_FINISH;
+
+    SemanticExtraction_Prediction_FINISH = delay SemanticExtraction_Prediction_START by SemanticExtraction_Prediction_EXECUTION;
+
+
+    SemanticExtraction_SignInterpretation_SPAWN = periodic 200ms with jitter SemanticExtraction_SignInterpretation_JITTER offset SemanticExtraction_SignInterpretation_PHASE;
+    SemanticExtraction_SignInterpretation_SPAWN causes SemanticExtraction_SignInterpretation_START;
+    allow SemanticExtraction_SignInterpretation_FINISH_FORCE in [SemanticExtraction_SignInterpretation_SPAWN, SemanticExtraction_SignInterpretation_FINISH[;
+    forbid gpu1_DROP in [SemanticExtraction_SignInterpretation_SPAWN, SemanticExtraction_SignInterpretation_FINISH[;
+    gpu1_FORCE += SemanticExtraction_SignInterpretation_FINISH_FORCE;
+    gpu1_SPAWN += SemanticExtraction_SignInterpretation_SPAWN;
+    gpu1_EXECUTION |= SemanticExtraction_SignInterpretation_START;
+    gpu1_RELEASE |= SemanticExtraction_SignInterpretation_FINISH;
+
+    SemanticExtraction_SignInterpretation_FINISH = delay SemanticExtraction_SignInterpretation_START by SemanticExtraction_SignInterpretation_EXECUTION;
+
+
+    CollisionDetection_TimeToCollision_SPAWN = periodic 200ms with jitter CollisionDetection_TimeToCollision_JITTER offset CollisionDetection_TimeToCollision_PHASE;
+    CollisionDetection_TimeToCollision_SPAWN causes CollisionDetection_TimeToCollision_START;
+    allow CollisionDetection_TimeToCollision_FINISH_FORCE in [CollisionDetection_TimeToCollision_SPAWN, CollisionDetection_TimeToCollision_FINISH[;
+    forbid cpu1_DROP in [CollisionDetection_TimeToCollision_SPAWN, CollisionDetection_TimeToCollision_FINISH[;
+    cpu1_FORCE += CollisionDetection_TimeToCollision_FINISH_FORCE;
+    cpu1_SPAWN += CollisionDetection_TimeToCollision_SPAWN;
+    cpu1_EXECUTION |= CollisionDetection_TimeToCollision_START;
+    cpu1_RELEASE |= CollisionDetection_TimeToCollision_FINISH;
+
+    CollisionDetection_TimeToCollision_FINISH = delay CollisionDetection_TimeToCollision_START by CollisionDetection_TimeToCollision_EXECUTION;
+
+
+
+    CollisionDetection_BrakingDecision_SPAWN |= CollisionDetection_TimeToCollision_FINISH;    CollisionDetection_BrakingDecision_SPAWN causes CollisionDetection_BrakingDecision_START;
+    allow CollisionDetection_BrakingDecision_FINISH_FORCE in [CollisionDetection_BrakingDecision_SPAWN, CollisionDetection_BrakingDecision_FINISH[;
+    forbid cpu1_DROP in [CollisionDetection_BrakingDecision_SPAWN, CollisionDetection_BrakingDecision_FINISH[;
+    cpu1_FORCE += CollisionDetection_BrakingDecision_FINISH_FORCE;
+    cpu1_SPAWN += CollisionDetection_BrakingDecision_SPAWN;
+    cpu1_EXECUTION |= CollisionDetection_BrakingDecision_START;
+    cpu1_RELEASE |= CollisionDetection_BrakingDecision_FINISH;
+
+    CollisionDetection_BrakingDecision_FINISH = delay CollisionDetection_BrakingDecision_START by CollisionDetection_BrakingDecision_EXECUTION;
+
+
+
+    Assistance_BlindSpot_SPAWN |= SemanticExtraction_Prediction_FINISH;    Assistance_BlindSpot_SPAWN causes Assistance_BlindSpot_START;
+    allow Assistance_BlindSpot_FINISH_FORCE in [Assistance_BlindSpot_SPAWN, Assistance_BlindSpot_FINISH[;
+    forbid cpu2_DROP in [Assistance_BlindSpot_SPAWN, Assistance_BlindSpot_FINISH[;
+    cpu2_FORCE += Assistance_BlindSpot_FINISH_FORCE;
+    cpu2_SPAWN += Assistance_BlindSpot_SPAWN;
+    cpu2_EXECUTION |= Assistance_BlindSpot_START;
+    cpu2_RELEASE |= Assistance_BlindSpot_FINISH;
+
+    Assistance_BlindSpot_FINISH = delay Assistance_BlindSpot_START by Assistance_BlindSpot_EXECUTION;
+
+
+    Assistance_Navigation_SPAWN = periodic 100ms with jitter Assistance_Navigation_JITTER offset Assistance_Navigation_PHASE;
+    Assistance_Navigation_SPAWN causes Assistance_Navigation_START;
+    allow Assistance_Navigation_FINISH_FORCE in [Assistance_Navigation_SPAWN, Assistance_Navigation_FINISH[;
+    forbid cpu2_DROP in [Assistance_Navigation_SPAWN, Assistance_Navigation_FINISH[;
+    cpu2_FORCE += Assistance_Navigation_FINISH_FORCE;
+    cpu2_SPAWN += Assistance_Navigation_SPAWN;
+    cpu2_EXECUTION |= Assistance_Navigation_START;
+    cpu2_RELEASE |= Assistance_Navigation_FINISH;
+
+    Assistance_Navigation_FINISH = delay Assistance_Navigation_START by Assistance_Navigation_EXECUTION;
+
+
+    Assistance_Speeding_SPAWN = periodic 500ms with jitter Assistance_Speeding_JITTER offset Assistance_Speeding_PHASE;
+    Assistance_Speeding_SPAWN causes Assistance_Speeding_START;
+    allow Assistance_Speeding_FINISH_FORCE in [Assistance_Speeding_SPAWN, Assistance_Speeding_FINISH[;
+    forbid cpu2_DROP in [Assistance_Speeding_SPAWN, Assistance_Speeding_FINISH[;
+    cpu2_FORCE += Assistance_Speeding_FINISH_FORCE;
+    cpu2_SPAWN += Assistance_Speeding_SPAWN;
+    cpu2_EXECUTION |= Assistance_Speeding_START;
+    cpu2_RELEASE |= Assistance_Speeding_FINISH;
+
+    Assistance_Speeding_FINISH = delay Assistance_Speeding_START by Assistance_Speeding_EXECUTION;
+
+
+
+    Assistance_LaneMonitoring_SPAWN |= SemanticExtraction_ObjectDetection_FINISH;    Assistance_LaneMonitoring_SPAWN causes Assistance_LaneMonitoring_START;
+    allow Assistance_LaneMonitoring_FINISH_FORCE in [Assistance_LaneMonitoring_SPAWN, Assistance_LaneMonitoring_FINISH[;
+    forbid cpu2_DROP in [Assistance_LaneMonitoring_SPAWN, Assistance_LaneMonitoring_FINISH[;
+    cpu2_FORCE += Assistance_LaneMonitoring_FINISH_FORCE;
+    cpu2_SPAWN += Assistance_LaneMonitoring_SPAWN;
+    cpu2_EXECUTION |= Assistance_LaneMonitoring_START;
+    cpu2_RELEASE |= Assistance_LaneMonitoring_FINISH;
+
+    Assistance_LaneMonitoring_FINISH = delay Assistance_LaneMonitoring_START by Assistance_LaneMonitoring_EXECUTION;
+
+
+    Assistance_PedestrianNotification_SPAWN = periodic 1000ms with jitter Assistance_PedestrianNotification_JITTER offset Assistance_PedestrianNotification_PHASE;
+    Assistance_PedestrianNotification_SPAWN causes Assistance_PedestrianNotification_START;
+    allow Assistance_PedestrianNotification_FINISH_FORCE in [Assistance_PedestrianNotification_SPAWN, Assistance_PedestrianNotification_FINISH[;
+    forbid cpu2_DROP in [Assistance_PedestrianNotification_SPAWN, Assistance_PedestrianNotification_FINISH[;
+    cpu2_FORCE += Assistance_PedestrianNotification_FINISH_FORCE;
+    cpu2_SPAWN += Assistance_PedestrianNotification_SPAWN;
+    cpu2_EXECUTION |= Assistance_PedestrianNotification_START;
+    cpu2_RELEASE |= Assistance_PedestrianNotification_FINISH;
+
+    Assistance_PedestrianNotification_FINISH = delay Assistance_PedestrianNotification_START by Assistance_PedestrianNotification_EXECUTION;
+
+
+}

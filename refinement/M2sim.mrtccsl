@@ -1,0 +1,38 @@
+assume {
+    // A0
+    // A1
+    duration: -2ms <= jitter1 <= 2ms;
+    duration: -4ms <= jitter3 <= 4ms;
+    duration: 10ms <= exec1 <= 20ms;
+    duration: 20ms <= exec2 <= 30ms;
+    duration: 30ms <= exec3 <= 40ms;
+    // A2
+    continuous process jitter1 with normal(0ms,1ms);
+    continuous process jitter3 with normal(0ms,3ms);
+    continuous process exec1 with normal(14ms,4ms);
+    continuous process exec2 with normal(23ms,6ms);
+    continuous process exec3 with normal(37ms,4ms);
+    // A2sim
+    continuous process sched1 with exponential(10ms);
+    continuous process sched2 with exponential(10ms);
+    continuous process sched3 with exponential(10ms);
+} structure {
+    // S0
+    release1 causes start1;
+    start1 causes finish1;
+    release2 causes start2;
+    start2 causes finish2;
+    release3 causes start3;
+    start3 causes finish3;
+    finish1 causes release2;
+    // S1
+    release1 = periodic 50ms with jitter jitter1 offset 0ms;
+    release3 = periodic 50ms with jitter jitter3 offset 0ms;
+    finish1 = delay start1 by exec1;
+    finish2 = delay start2 by exec2;
+    finish3 = delay start3 by exec3;
+    // S2sim
+    start1 = delay release1 by sched1;
+    start2 = delay release2 by sched2;
+    start3 = delay release3 by sched3;
+}
