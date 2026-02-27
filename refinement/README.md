@@ -2,7 +2,7 @@
 
 ## How to experiment
 - change something in one of the modules ([M0.mrtccsl](./M0.mrtccsl), [M1.mrtccsl](./M1.mrtccsl), [M2sim.mrtccsl](./M2sim.mrtccsl), [M21.mrtccsl](./M21.mrtccsl) or [M22.mrtccsl](./M22.mrtccsl))
-    - unfortunately, for now the best syntax reference is the [parser](https://github.com/PaulRaUnite/mrtccsl/blob/main/lib/mrtccslparsing/parser.mly)
+    - [the syntax reference](https://github.com/PaulRaUnite/mrtccsl/blob/ecrts2026/lib/mrtccslparsing/syntax.ebnf)
 - or add a new one: requires adding the name in scripts [generate.sh](./generate.sh), [analysis.sh](./analysis.sh) and [visualize.sh](./visualize.sh)
 - run `bash all.sh` to run analysis on all modules
 
