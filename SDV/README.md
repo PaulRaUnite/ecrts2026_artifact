@@ -23,7 +23,7 @@ This condition depends on the current speed of the ego (host) vehicle and brakin
 TTC is computed by another service and requires knowledge of the objects in the scene, their geometry, trajectories and speed, including such of the ego vehicle, as a collision occurs if and only if the ego vehicle and other object have intersecting trajectories, and it can be projected that the objects meet at the intersection at some moment in time.
 The instantaneous speed is obtained from the wheel speed sensors, while trajectory and speed evolution can be derived to some success from the current direction, the road geometry and steering wheel position.
 For non-ego vehicles, their speed and direction need to be derived from the sequence of the environment reconstructions.
-The environment is reconstructed from 7 cameras (2D images), leaving no dead angles around the vehicle, radar in front (low-resolution occupancy image with relative speed of obstacles) and LIDAR on the roof (sparse point cloud).% TODO: maybe add image?
+The environment is reconstructed from 7 cameras (2D images), leaving no dead angles around the vehicle, radar in front (low-resolution occupancy image with relative speed of obstacles) and LIDAR on the roof (sparse point cloud).
 
 We consider that the environment reconstruction is online and partial, meaning that the new data from sensors can update the environmental map without needing the data from all sensors to be present at the same time.
 This can either mean that the service recomputes the map using the older data for other sensors or performs an intelligent patching of the map.

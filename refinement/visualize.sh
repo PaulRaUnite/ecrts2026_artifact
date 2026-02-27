@@ -9,6 +9,6 @@ do
         if [ ! -d "./images/$spec/$b/" ]; then
             mkdir -p "./images/$spec/$b/";
         fi
-        cat "./analysis/$spec/$b/chain/weighted/start1_finish3.histogram.csv" | gnuplot ./visualize.gnu > "./images/$spec/$b/start1_finish3.pdf";
+        cat "./analysis/$spec/$b/chain/weighted/start1_finish3.histogram.csv" | gnuplot ./visualize.gnu > "./images/$spec/$b/start1_finish3.svg";
     done
 done
