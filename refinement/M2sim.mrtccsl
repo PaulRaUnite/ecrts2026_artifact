@@ -13,9 +13,9 @@ assume {
     continuous process exec2 with normal(23ms,6ms);
     continuous process exec3 with normal(37ms,4ms);
     // A2sim
-    continuous process sched1 with exponential(10ms);
-    continuous process sched2 with exponential(10ms);
-    continuous process sched3 with exponential(10ms);
+    continuous process sched1 with exponential(5ms);
+    continuous process sched2 with exponential(5ms);
+    continuous process sched3 with exponential(5ms);
 } structure {
     // S0
     release1 causes start1;
